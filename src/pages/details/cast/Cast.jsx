@@ -25,10 +25,10 @@ const Cast = ({ data, loading }) => {
                 <div className="sectionHeading">Top Cast</div>
                 {!loading ? (
                     <div className="listItems">
-                        {data?.map((item) => {
+                        {data?.map((item, index) => {
                            const imgUrl = item.profile_path ? url.profile + item.profile_path : avatar;
                            return (
-                              <div className="listItem">
+                              <div className="listItem" key={index}>
                                  <div className="profileImg">
                                     <Img src={imgUrl} />
                                  </div>
